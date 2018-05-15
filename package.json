@@ -1,0 +1,19 @@
+{
+  "name": "helloworld",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "bardolf",
+  "license": "MIT",
+  "dependencies": {
+    "mathjs": "^4.2.2"    
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "rimraf": "^2.6.2"
+  },
+  "scripts": {
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./yarn.lock --copy-files --source-maps",
+    "start": "yarn run build && node --inspect dist/index.js"
+  }
+}
